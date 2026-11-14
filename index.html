@@ -1,34 +1,94 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
   <title>YEN BAI SERI</title>
 
-  <link rel="icon" href="https://lh3.googleusercontent.com/d/1dQ3iQZCf9AtRoHoNA7cl8VFK9VAL80eS">
+  <meta name="theme-color" content="#126d5a">
+  <meta name="apple-mobile-web-app-title" content="YEN BAI SERI">
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
+  <link
+    rel="icon"
+    type="image/png"
+    href="/icons/icon-192.png"
+  >
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/icons/icon-180.png"
+  >
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/install.css">
 
-    iframe {
-      display: block;
-      width: 100%;
-      height: 100vh;
-      border: none;
-    }
-  </style>
+  <script src="/install.js" defer></script>
 </head>
+
 <body>
+  <header class="install-bar">
+    <strong>YEN BAI SERI</strong>
+
+    <button id="installTop" class="primary" type="button">
+      ↓ Cài vào màn hình chính
+    </button>
+  </header>
+
   <iframe
+    id="seriApp"
     src="https://script.google.com/macros/s/AKfycbxTWHfV-PFgAgKUBdgpODpnwDQTZw-ThYYa29GIUmkBZiCCjkZn6flWJ1HTuFlYO0d7BA/exec"
-    title="Cổng nhân viên YEN BAI SERI">
+    title="Cổng nhân viên YEN BAI SERI"
+    allow="fullscreen">
   </iframe>
+
+  <dialog id="installDialog" aria-labelledby="installTitle">
+    <div class="install-brand">
+      <img
+        src="/icons/icon-192.png"
+        width="72"
+        height="72"
+        alt="Logo công ty"
+      >
+
+      <div>
+        <strong>YEN BAI SERI</strong>
+        <div>Chấm công &amp; sản phẩm</div>
+      </div>
+    </div>
+
+    <h2 id="installTitle">
+      Thêm YEN BAI SERI vào màn hình chính?
+    </h2>
+
+    <p id="installText">
+      Mở nhanh trang chấm công bằng biểu tượng logo công ty.
+    </p>
+
+    <div id="installHelp" hidden></div>
+
+    <p
+      id="installStatus"
+      role="status"
+      aria-live="polite">
+    </p>
+
+    <div class="install-actions">
+      <button id="installCancel" type="button">
+        Hủy
+      </button>
+
+      <button id="installConfirm" class="primary" type="button">
+        Cài vào màn hình chính
+      </button>
+    </div>
+  </dialog>
+
+  <noscript>
+    Vui lòng bật JavaScript để sử dụng trang.
+  </noscript>
 </body>
 </html>
